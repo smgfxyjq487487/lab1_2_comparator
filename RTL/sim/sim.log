@@ -1,0 +1,988 @@
+
+========== 2026-10-14 19:18:44.771667 ==========
+Detected OS: Linux
+Found SDL2: sdl2-config
+SDL CFLAGS: -I/usr/include/SDL2 -D_REENTRANT
+SDL LIBS: -lSDL2
+Start simulation...
+Include directories used: /media/sf_ShareFolder/FPGA_Lab1/lab1_2_comparator/RTL
+---------------------------------
+Step 0: Clean up previously generated files...
+Tip: The obj_dir folder does not exist, no need to clean it up
+---------------------------------
+Step 1: Run Verilator Compiler...
+
+✓ Verilator compilation completed successfully!
+---------------------------------
+Step 2: Build the simulation executable...
+make: 进入目录“/media/sf_ShareFolder/FPGA_Lab1/lab1_2_comparator/RTL/sim/obj_dir”
+g++ -I/usr/include/SDL2 -D_REENTRANT -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -I/usr/include/SDL2 -D_REENTRANT  -Os -c -o simulator.o ../simulator.cpp
+g++ -I/usr/include/SDL2 -D_REENTRANT -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -I/usr/include/SDL2 -D_REENTRANT  -Os -c -o verilated.o /usr/share/verilator/include/verilated.cpp
+/usr/bin/perl /usr/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include VDevelopmentBoard.cpp VDevelopmentBoard__Slow.cpp VDevelopmentBoard__Syms.cpp > VDevelopmentBoard__ALL.cpp
+g++ -I/usr/include/SDL2 -D_REENTRANT -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -I/usr/include/SDL2 -D_REENTRANT  -Os -c -o VDevelopmentBoard__ALL.o VDevelopmentBoard__ALL.cpp
+ar -cr VDevelopmentBoard__ALL.a VDevelopmentBoard__ALL.o
+ranlib VDevelopmentBoard__ALL.a
+../simulator.cpp: In function ‘void render_sdl()’:
+../simulator.cpp:305:34: warning: narrowing conversion of ‘(49 + i)’ from ‘int’ to ‘char’ [-Wnarrowing]
+  305 |         char digit_str[2] = {'1' + i, '\0'};
+      |                              ~~~~^~~
+g++    simulator.o verilated.o VDevelopmentBoard__ALL.a   -lSDL2    -o VDevelopmentBoard
+make: 离开目录“/media/sf_ShareFolder/FPGA_Lab1/lab1_2_comparator/RTL/sim/obj_dir”
+✓ Simulation executable file built successfully!
+---------------------------------
+Step 3: Start the simulation...
+----------------------------------------
+Window surface size: 800x850
+[SimThread] Starting simulation loop...
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Slow frame: 27ms (target: 16ms)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 18 events this frame (processed 1/19)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 14 events this frame (processed 1/15)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 19 events this frame (processed 1/20)
+[EventLoop] Dropped 15 events this frame (processed 1/16)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] FPS: 56 | Events: 34 | Dropped: 202 | MaxEvents/Frame: 20 | MaxFrameTime: 27ms
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 57 | Events: 7 | Dropped: 17 | MaxEvents/Frame: 6 | MaxFrameTime: 19ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 23 events this frame (processed 1/24)
+[EventLoop] Dropped 25 events this frame (processed 1/26)
+[EventLoop] Dropped 27 events this frame (processed 1/28)
+[EventLoop] Dropped 36 events this frame (processed 1/37)
+[EventLoop] Dropped 19 events this frame (processed 1/20)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 56 | Events: 34 | Dropped: 219 | MaxEvents/Frame: 37 | MaxFrameTime: 17ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] FPS: 56 | Events: 22 | Dropped: 31 | MaxEvents/Frame: 8 | MaxFrameTime: 15ms
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 27 events this frame (processed 1/28)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 25 events this frame (processed 1/26)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 57 | Events: 19 | Dropped: 94 | MaxEvents/Frame: 28 | MaxFrameTime: 11ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] FPS: 55 | Events: 7 | Dropped: 13 | MaxEvents/Frame: 6 | MaxFrameTime: 14ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[Input] Button 'B3' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B3' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 54 | Events: 3 | Dropped: 4 | MaxEvents/Frame: 3 | MaxFrameTime: 14ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 9 events this frame (processed 1/10)
+[EventLoop] Dropped 12 events this frame (processed 1/13)
+[EventLoop] Dropped 12 events this frame (processed 1/13)
+[EventLoop] Dropped 20 events this frame (processed 1/21)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 9 events this frame (processed 1/10)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] FPS: 54 | Events: 19 | Dropped: 102 | MaxEvents/Frame: 21 | MaxFrameTime: 12ms
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[Input] Button 'RESET' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[SimThread] Reset triggered
+[Input] Button 'RESET' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[Input] Button 'RESET' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[SimThread] Reset triggered
+[Input] Button 'RESET' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 55 | Events: 21 | Dropped: 58 | MaxEvents/Frame: 11 | MaxFrameTime: 13ms
+[Input] Button 'RESET' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[SimThread] Reset triggered
+[Input] Button 'RESET' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 9 events this frame (processed 1/10)
+[EventLoop] Dropped 15 events this frame (processed 1/16)
+[EventLoop] Dropped 12 events this frame (processed 1/13)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 56 | Events: 17 | Dropped: 50 | MaxEvents/Frame: 16 | MaxFrameTime: 18ms
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] FPS: 56 | Events: 18 | Dropped: 35 | MaxEvents/Frame: 7 | MaxFrameTime: 12ms
+[Input] Button 'B2' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B2' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 57 | Events: 2 | Dropped: 3 | MaxEvents/Frame: 3 | MaxFrameTime: 13ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] FPS: 56 | Events: 7 | Dropped: 23 | MaxEvents/Frame: 11 | MaxFrameTime: 12ms
+[Input] Button 'B3' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B3' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 56 | Events: 11 | Dropped: 16 | MaxEvents/Frame: 5 | MaxFrameTime: 17ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B2' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B2' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 56 | Events: 17 | Dropped: 13 | MaxEvents/Frame: 3 | MaxFrameTime: 10ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] FPS: 55 | Events: 12 | Dropped: 25 | MaxEvents/Frame: 5 | MaxFrameTime: 13ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[Input] Button 'B2' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B2' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] FPS: 56 | Events: 29 | Dropped: 39 | MaxEvents/Frame: 5 | MaxFrameTime: 12ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[Input] Button 'B2' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B2' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 57 | Events: 12 | Dropped: 13 | MaxEvents/Frame: 3 | MaxFrameTime: 11ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[Input] Button 'B3' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B3' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 57 | Events: 15 | Dropped: 18 | MaxEvents/Frame: 4 | MaxFrameTime: 12ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[Input] Button 'B3' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B3' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 54 | Events: 6 | Dropped: 9 | MaxEvents/Frame: 3 | MaxFrameTime: 18ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 21 events this frame (processed 1/22)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 22 events this frame (processed 1/23)
+[EventLoop] Dropped 18 events this frame (processed 1/19)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 26 events this frame (processed 1/27)
+[EventLoop] Dropped 36 events this frame (processed 1/37)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] FPS: 56 | Events: 28 | Dropped: 193 | MaxEvents/Frame: 37 | MaxFrameTime: 9ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] FPS: 55 | Events: 22 | Dropped: 72 | MaxEvents/Frame: 12 | MaxFrameTime: 15ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 20 events this frame (processed 1/21)
+[EventLoop] Dropped 22 events this frame (processed 1/23)
+[EventLoop] FPS: 55 | Events: 12 | Dropped: 74 | MaxEvents/Frame: 23 | MaxFrameTime: 12ms
+[EventLoop] Dropped 24 events this frame (processed 1/25)
+[EventLoop] Dropped 21 events this frame (processed 1/22)
+[EventLoop] Dropped 18 events this frame (processed 1/19)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 22 events this frame (processed 1/23)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 14 events this frame (processed 1/15)
+[EventLoop] Dropped 12 events this frame (processed 1/13)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 12 events this frame (processed 1/13)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] FPS: 56 | Events: 18 | Dropped: 196 | MaxEvents/Frame: 25 | MaxFrameTime: 12ms
+[EventLoop] FPS: 55 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 11ms
+[EventLoop] FPS: 56 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 9ms
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 30 events this frame (processed 1/31)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 25 events this frame (processed 1/26)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 9 events this frame (processed 1/10)
+[EventLoop] Dropped 9 events this frame (processed 1/10)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 15 events this frame (processed 1/16)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 15 events this frame (processed 1/16)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 56 | Events: 31 | Dropped: 251 | MaxEvents/Frame: 31 | MaxFrameTime: 14ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 14 events this frame (processed 1/15)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 24 events this frame (processed 1/25)
+[EventLoop] Dropped 9 events this frame (processed 1/10)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped
+2 events this frame (processed 1/3)
+[EventLoop] FPS: 56 | Events: 42 | Dropped: 167 | MaxEvents/Frame: 25 | MaxFrameTime: 14ms
+[EventLoop] FPS: 55 | Events: 4 | Dropped: 0 | MaxEvents/Frame: 1 | MaxFrameTime: 12ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] FPS: 56 | Events: 9 | Dropped: 10 | MaxEvents/Frame: 4 | MaxFrameTime: 16ms
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 12 events this frame (processed 1/13)
+[EventLoop] Dropped 27 events this frame (processed 1/28)
+[EventLoop] Dropped 31 events this frame (processed 1/32)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Slow frame: 25ms (target: 16ms)
+[EventLoop] FPS: 56 | Events: 14 | Dropped: 132 | MaxEvents/Frame: 32 | MaxFrameTime: 25ms
+[EventLoop] FPS: 54 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 13ms
+[EventLoop] FPS: 54 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 15ms
+[EventLoop] FPS: 54 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 17ms
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] FPS: 54 | Events: 7 | Dropped: 88 | MaxEvents/Frame: 17 | MaxFrameTime: 17ms
+[EventLoop] FPS: 55 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 13ms
+[EventLoop] FPS: 54 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 15ms
+[EventLoop] FPS: 54 | Events: 1 | Dropped: 0 | MaxEvents/Frame: 1 | MaxFrameTime: 19ms
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 14 events this frame (processed 1/15)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 24 events this frame (processed 1/25)
+[EventLoop] Dropped 14 events this frame (processed 1/15)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 14 events this frame (processed 1/15)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 56 | Events: 30 | Dropped: 194 | MaxEvents/Frame: 25 | MaxFrameTime: 15ms
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] FPS: 55 | Events: 8 | Dropped: 18 | MaxEvents/Frame: 9 | MaxFrameTime: 12ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 12 events this frame (processed 1/13)
+[EventLoop] Dropped 14 events this frame (processed 1/15)
+[EventLoop] Dropped 12 events this frame (processed 1/13)
+[EventLoop] Dropped 18 events this frame (processed 1/19)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 24 events this frame (processed 1/25)
+[EventLoop] Dropped 18 events this frame (processed 1/19)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 14 events this frame (processed 1/15)
+[EventLoop] FPS: 56 | Events: 19 | Dropped: 137 | MaxEvents/Frame: 25 | MaxFrameTime: 16ms
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 18 events this frame (processed 1/19)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 25 events this frame (processed 1/26)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 23 events this frame (processed 1/24)
+[EventLoop] Dropped 19 events this frame (processed 1/20)
+[EventLoop] Dropped 30 events this frame (processed 1/31)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 56 | Events: 18 | Dropped: 174 | MaxEvents/Frame: 31 | MaxFrameTime: 20ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 54 | Events: 12 | Dropped: 4 | MaxEvents/Frame: 2 | MaxFrameTime: 17ms
+[EventLoop] FPS: 56 | Events: 1 | Dropped: 0 | MaxEvents/Frame: 1 | MaxFrameTime: 14ms
+[Input] Button 'B2' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B2' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 56 | Events: 4 | Dropped: 3 | MaxEvents/Frame: 3 | MaxFrameTime: 11ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 55 | Events: 11 | Dropped: 21 | MaxEvents/Frame: 8 | MaxFrameTime: 12ms
+[Input] Button 'B3' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B3' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 54 | Events: 2 | Dropped: 3 | MaxEvents/Frame: 3 | MaxFrameTime: 11ms
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 55 | Events: 12 | Dropped: 23 | MaxEvents/Frame: 6 | MaxFrameTime: 14ms
+[Input] Button 'B2' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B2' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 54 | Events: 3 | Dropped: 3 | MaxEvents/Frame: 3 | MaxFrameTime: 15ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 55 | Events: 14 | Dropped: 11 | MaxEvents/Frame: 3 | MaxFrameTime: 19ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[Input] Button 'B3' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B3' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS:
+55 | Events: 6 | Dropped: 9 | MaxEvents/Frame: 3 | MaxFrameTime: 14ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 22 events this frame (processed 1/23)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 18 events this frame (processed 1/19)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 22 events this frame (processed 1/23)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 19 events this frame (processed 1/20)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 19 events this frame (processed 1/20)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 22 events this frame (processed 1/23)
+[EventLoop] Dropped 15 events this frame (processed 1/16)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 9 events this frame (processed 1/10)
+[EventLoop] Dropped 12 events this frame (processed 1/13)
+[EventLoop] Dropped 18 events this frame (processed 1/19)
+[EventLoop] FPS: 54 | Events: 33 | Dropped: 285 | MaxEvents/Frame: 23 | MaxFrameTime: 18ms
+[EventLoop] Dropped 9 events this frame (processed 1/10)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 54 | Events: 6 | Dropped: 19 | MaxEvents/Frame: 10 | MaxFrameTime: 13ms
+[EventLoop] FPS: 58 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 13ms
+[EventLoop] FPS: 56 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 17ms
+[EventLoop] FPS: 56 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 11ms
+[EventLoop] FPS: 56 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 15ms
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped
+3 events this frame (processed 1/4)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] FPS: 55 | Events: 25 | Dropped: 120 | MaxEvents/Frame: 12 | MaxFrameTime: 15ms
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] FPS: 56 | Events: 5 | Dropped: 25 | MaxEvents/Frame: 17 | MaxFrameTime: 17ms
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 30 events this frame (processed 1/31)
+[EventLoop] Dropped 18 events this frame (processed 1/19)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 20 events this frame (processed 1/21)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 12 events this frame (processed 1/13)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 9 events this frame (processed 1/10)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 56 | Events: 32 | Dropped: 180 | MaxEvents/Frame: 31 | MaxFrameTime: 17ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 12 events this frame (processed 1/13)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 9 events this frame (processed 1/10)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 19 events this frame (processed 1/20)
+[EventLoop] Dropped 14 events this frame (processed 1/15)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 9 events this frame (processed 1/10)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] FPS: 57 | Events: 37 | Dropped: 188 | MaxEvents/Frame: 20 | MaxFrameTime: 14ms
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] FPS: 55 | Events: 20 | Dropped: 69 | MaxEvents/Frame: 12 | MaxFrameTime: 20ms
+[EventLoop] FPS: 55 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 16ms
+[EventLoop] FPS: 55 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 16ms
+[EventLoop] FPS: 55 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 14ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 15 events this frame (processed 1/16)
+[EventLoop] Dropped 20 events this frame (processed 1/21)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 31 events this frame (processed 1/32)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 21 events this frame (processed 1/22)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 20 events this frame (processed 1/21)
+[EventLoop] Dropped 20 events this frame (processed 1/21)
+[EventLoop] Dropped 15 events this frame (processed 1/16)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] FPS: 56 | Events: 30 | Dropped: 269 | MaxEvents/Frame: 32 | MaxFrameTime: 20ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Slow frame: 22ms (target: 16ms)
+[EventLoop] Slow frame: 27ms (target: 16ms)
+[EventLoop] FPS: 54 | Events: 19 | Dropped: 1 | MaxEvents/Frame: 2 | MaxFrameTime: 27ms
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 14 events this frame (processed 1/15)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 20 events this frame (processed 1/21)
+[EventLoop] Dropped 20 events this frame (processed 1/21)
+[EventLoop] Dropped 21 events this frame (processed 1/22)
+[EventLoop] Dropped 24 events this frame (processed 1/25)
+[EventLoop] Dropped 24 events this frame (processed 1/25)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 56 | Events: 31 | Dropped: 233 | MaxEvents/Frame: 25 | MaxFrameTime: 17ms
+[Input] Button 'B2' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B2' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] FPS: 55 | Events: 7 | Dropped: 9 | MaxEvents/Frame: 4 | MaxFrameTime: 15ms
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped
+1 events this frame (processed 1/2)
+[Input] Button 'B3' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B3' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 55 | Events: 8 | Dropped: 10 | MaxEvents/Frame: 5 | MaxFrameTime: 16ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B2' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] FPS: 57 | Events: 8 | Dropped: 14 | MaxEvents/Frame: 5 | MaxFrameTime: 13ms
+[Input] Button 'B2' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 54 | Events: 12 | Dropped: 17 | MaxEvents/Frame: 5 | MaxFrameTime: 14ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[Input] Button 'B3' pressed
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[Input] Button 'B3' released
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 9 events this frame (processed 1/10)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 53 | Events: 12 | Dropped: 35 | MaxEvents/Frame: 11 | MaxFrameTime: 21ms
+[EventLoop] FPS: 56 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 19ms
+[EventLoop] Dropped 12 events this frame (processed 1/13)
+[EventLoop] Dropped 19 events this frame (processed 1/20)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 18 events this frame (processed 1/19)
+[EventLoop] Dropped
+20 events this frame (processed 1/21)
+[EventLoop] Dropped 20 events this frame (processed 1/21)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] FPS: 54 | Events: 11 | Dropped: 139 | MaxEvents/Frame: 21 | MaxFrameTime: 13ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 55 | Events: 10 | Dropped: 15 | MaxEvents/Frame: 7 | MaxFrameTime: 14ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 55 | Events: 4 | Dropped: 1 | MaxEvents/Frame: 2 | MaxFrameTime: 15ms
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped
+4 events this frame (processed 1/5)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 15 events this frame (processed 1/16)
+[EventLoop] Dropped 14 events this frame (processed 1/15)
+[EventLoop] Dropped 13 events this frame (processed 1/14)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 15 events this frame (processed 1/16)
+[EventLoop] Dropped 16 events this frame (processed 1/17)
+[EventLoop] Dropped 14 events this frame (processed 1/15)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 55 | Events: 29 | Dropped: 165 | MaxEvents/Frame: 17 | MaxFrameTime: 15ms
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 17 events this frame (processed 1/18)
+[EventLoop] Dropped 12 events this frame (processed 1/13)
+[EventLoop] Dropped 15 events this frame (processed 1/16)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 11 events this frame (processed 1/12)
+[EventLoop] Dropped 5 events this frame (processed 1/6)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 4 events this frame (processed 1/5)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 56 | Events: 33 | Dropped: 121 | MaxEvents/Frame: 18 | MaxFrameTime: 16ms
+[EventLoop] FPS: 57 | Events: 10 | Dropped: 0 | MaxEvents/Frame: 1 | MaxFrameTime: 18ms
+[EventLoop] Dropped 15 events this frame (processed 1/16)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 10 events this frame (processed 1/11)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 3 events this frame (processed 1/4)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] FPS: 54 | Events: 22 | Dropped: 59 | MaxEvents/Frame: 16 | MaxFrameTime: 14ms
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 6 events this frame (processed 1/7)
+[EventLoop] FPS: 55 | Events: 3 | Dropped: 21 | MaxEvents/Frame: 9 | MaxFrameTime: 13ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 7 events this frame (processed 1/8)
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped 8 events this frame (processed 1/9)
+[EventLoop] FPS: 55 | Events: 4 | Dropped: 18 | MaxEvents/Frame: 9 | MaxFrameTime: 14ms
+[EventLoop] Dropped 14 events this frame (processed 1/15)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 55 | Events: 3 | Dropped: 15 | MaxEvents/Frame: 15 | MaxFrameTime: 14ms
+[EventLoop] FPS: 56 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 10ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] FPS: 57 | Events: 14 | Dropped: 1 | MaxEvents/Frame: 2 | MaxFrameTime: 14ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] Dropped
+2 events this frame (processed 1/3)
+[EventLoop] FPS: 56 | Events: 12 | Dropped: 4 | MaxEvents/Frame: 3 | MaxFrameTime: 18ms
+[EventLoop] FPS: 56 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 14ms
+[EventLoop] FPS: 57 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 14ms
+[EventLoop] FPS: 54 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 13ms
+[EventLoop] FPS: 55 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 15ms
+[EventLoop] FPS: 56 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 12ms
+[EventLoop] FPS: 56 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 18ms
+[EventLoop] FPS: 57 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 16ms
+[EventLoop] FPS: 56 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 14ms
+[EventLoop] FPS: 54 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 15ms
+[EventLoop] FPS: 55 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 10ms
+[EventLoop] FPS: 54 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 13ms
+[EventLoop] FPS: 55 | Events: 0 | Dropped: 0 | MaxEvents/Frame: 0 | MaxFrameTime: 15ms
+[EventLoop] Dropped 2 events this frame (processed 1/3)
+[EventLoop] FPS: 55 | Events: 1 | Dropped: 2 | MaxEvents/Frame: 3 | MaxFrameTime: 13ms
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[EventLoop] Dropped 1 events this frame (processed 1/2)
+[Input] Quit key pressed
+
+========== EventLoop Final Stats ==========
+Total frames processed: 53
+Total events processed: 4
+Total events dropped:   2
+Max events in one frame: 2
+===========================================
+
+========== Simulation Thread Stats ==========
+Simulation duration: 101s
+Total iterations:    993678336
+Iterations/second:   9838399
+Final time stamp:    3974713424
+=============================================
+[SimThread] Simulation loop ended
+----------------------------------------
+✓ Simulation execution completed!
